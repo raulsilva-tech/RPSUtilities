@@ -25,7 +25,7 @@ func (uc *StreamUseCase) Execute(url string) error {
 	// fmt.Println("Check: " + url)
 	c := gortsplib.Client{}
 
-	// u, err := base.ParseURL("rtsp://192.168.1.25:554/user=dankia&password=dankia77&channel=1&stream=0.sdp")
+	// u, err := base.ParseURL("rtsp://192.168.1.25:554/user=&password=&channel=1&stream=0.sdp")
 	u, err := base.ParseURL(url)
 	if err != nil {
 		log.Println(url + ": " + fmt.Sprintf("%T\n", err) + " | " + err.Error())

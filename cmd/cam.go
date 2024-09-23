@@ -17,10 +17,11 @@ var (
 // camCmd represents the cam command
 var camCmd = &cobra.Command{
 	Use:   "cam",
-	Short: "Comandos para comunicação com as câmeras IP do equipamento.",
+	Short: "Comandos para comunicação com uma câmera IP.",
 	Long: `Comandos disponíveis:
 	- Reboot
 	- Check
+	- Stream
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		ip, _ := cmd.Flags().GetString("ip")
@@ -37,7 +38,7 @@ func init() {
 	// and all subcommands, e.g.:
 	camCmd.PersistentFlags().String("ip", "", "IP da câmera")
 	camCmd.PersistentFlags().IntP("port", "p", 8899, "Porta ONVIF da câmera")
-	camCmd.PersistentFlags().String("user", "dankia", "Usuário da câmera")
+	camCmd.PersistentFlags().String("user", "", "Usuário da câmera")
 	camCmd.PersistentFlags().String("password", "", "Senha da câmera")
 
 	// Cobra supports local flags which will only run when this command
