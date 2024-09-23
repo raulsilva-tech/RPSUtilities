@@ -1,0 +1,25 @@
+go install github.com/spf13/cobra-cli@latest
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+
+cobra-cli init
+
+//adicionando um comando
+cobra-cli add pingtest
+
+//para executar o comando
+go run main.go pingtest
+
+//para adicionar um comando a outro
+cobra-cli add create -p 'categoryCmd'
+
+//persistent flags: globais para o comando que se extendem aos filhos
+//flags: somente para o comando especificado
+
+
+-------------
+
+É necessário que a propriedade ONVIF Protect esteja ativada na camera a fim de que ela permita somente
+conexões autenticadas
