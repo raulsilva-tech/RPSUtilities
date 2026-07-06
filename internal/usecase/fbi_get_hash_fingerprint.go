@@ -133,7 +133,7 @@ outer:
 		base64Fingerprint = "timeout"
 	}
 
-	return Output{resp.StatusCode, base64Fingerprint}, nil
+	return Output{http.StatusOK, base64Fingerprint}, nil
 }
 
 func digestRequest(host string, port int, user, password, url string) (Output, error) {
