@@ -40,7 +40,8 @@ to quickly create a Cobra application.`,
 		// 	fmt.Println("Error:", err)
 		// 	return
 		// }
-		b, _ := json.MarshalIndent(output, "", "  ")
+		// b, _ := json.MarshalIndent(output, "", "  ")
+		b, _ := json.Marshal(output)
 		fmt.Println(string(b))
 
 	},
